@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deleted Posts History</title>
+</head>
+<body>
+    <h1>Deleted Posts History</h1>
+    <ul>
+        {% for post in deleted_posts %}
+            <li>{{ post.id }}-{{ post.title }} - {{ post.content }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'category_list' %}">Back to Categories</a>
+</body>
+</html>

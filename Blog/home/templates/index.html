@@ -1,0 +1,310 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
+  <title>Home</title>
+</head>
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+  header{
+    background-color: rgb(223, 254, 243);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+  }
+  nav ul{
+    list-style-type: none;
+    padding: 0;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: "Playwrite AU SA", cursive;
+    font-size: 15px;
+  }
+
+  .start{
+    width: 100%;
+    height: 660px;
+    background-color: white;
+  }
+  .test{
+    width: 100%;
+    max-width: 950px;
+    height: 660px;
+    background-color: white;
+    float: left;
+  }
+  .test h1{
+    font-size: 65px;
+    margin-top: 200px;
+    font-family: "Playwrite AU SA", cursive;
+  }
+  .test p{
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: "Playwrite GB S", cursive;
+  }
+  .era-image{
+    width: 100%;
+    max-width: 750px;
+    height: 660px;
+    background-color: white;
+    float: right;
+  }
+  .img-1{
+    width: 100%;
+    max-width: 395px;
+    margin-top: 10px;
+  }
+
+
+
+
+
+
+  .start1{
+    width: 100%;
+    height: 660px;
+    background-color: white;
+  }
+  .test1{
+    width: 100%;
+    max-width: 950px;
+    height: 660px;
+    background-color: white;
+    float: right;
+  }
+  .test1 h1{
+    font-size: 65px;
+    margin-top: 200px;
+    font-family: "Playwrite AU SA", cursive;
+  }
+  .test1 p{
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: "Playwrite GB S", cursive;
+  }
+  .era-image1{
+    width: 100%;
+    max-width: 750px;
+    height: 660px;
+    background-color: white;
+    float: left;
+  }
+  .img-2{
+    width: 100%;
+    max-width: 395px;
+    margin-top: 10px;
+  }
+
+
+.principle{
+  width: 100%;
+  height: 400px;
+}
+.inciple{
+  width: 100%;
+  max-width: 747px;
+  height: 400px;
+  float: left;
+}
+.niple{
+  width: 100%;
+  max-width: 950px;
+  height: 400px;
+  float: right;
+}
+.niple h5{
+  margin-top: 100px;
+    font-size: 30px;
+  font-family: "Playwrite GB S", cursive;
+}
+.square{
+  width: 100%;
+  max-width: 80px;
+  height: 70px;
+  float: right;
+}
+.lead{
+  font-family: "Playwrite GB S", cursive;
+  font-size: 30px;
+}
+
+
+
+</style>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'admin' %}"><i class="fa fa-user" style="font-size: 30px;color: black;"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="start">
+    <center>
+      <div class="test">
+        <h1>Magnet Kids</h1>
+        <p>For new Generation, Select a good style for your kids or the kids themselves should come and go home.</p>
+      </div>
+    </center>
+    <center>
+      <div class="era-image">
+        <img src="https://i.ibb.co/pf9HwMv/32243.jpg" class="img-1">
+      </div>
+    </center>
+  </div>
+  <br>
+  <header style="padding: 10px; background-color: black;">
+    <nav style="background-color: black;">
+        <ul>
+            {% if categories %}
+                {% for category in categories %}
+                    <li style="color: bisque;">
+                        <a href="{% url 'posts_by_category' category.id %}">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li style="color: bisque;">No categories available.</li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+
+
+  <br>
+  <div class="start1">
+    <center>
+      <div class="test1">
+        <h1>Magnet Boutique</h1>
+        <p>Behind the new Way, Select a good style for yourself and take it home.</p>
+      </div>
+    </center>
+    <center>
+      <div class="era-image1">
+        <img src="https://i.ibb.co/rm4SPrH/portrait-man-cartoon-style.jpg" class="img-2">
+      </div>
+    </center>
+  </div>
+  <br>
+  <header style="padding: 10px; background-color: black;">
+    <nav style="background-color: black;">
+        <ul>
+            {% if categories %}
+                {% for category in categories %}
+                    <li style="color: bisque;">
+                        <a href="{% url 'posts_by_category' category.id %}">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li style="color: bisque;">No categories available.</li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <br>
+  <hr>
+  <hr>
+  <div class="principle">
+    <center><div class="inciple">
+                <a href="https://www.google.com/maps/place/19%C2%B041'47.4%22N+72%C2%B046'11.9%22E/@19.6965145,72.769281,390m/data=!3m1!1e3!4m4!3m3!8m2!3d19.6965!4d72.7699722?entry=ttu"><img src="https://i.ibb.co/BKR9hPR/continents-8228680.png" alt="continents-8228680" width="100%" style="max-width: 400px;"></a>
+            </div>
+    </center>
+    <center><div class="niple">
+                <h5>2-15, Kacheri Rd, Vishnu Nagar, Palghar, Maharashtra 401404</h5>
+                <br>
+                <hr>
+                <br>
+                <div class="square">
+                  <a href="https://www.instagram.com/magnet__boutique/?igsh=NTFpNHVsczZvcGti"><i class="fa fa-instagram" style="font-size: 60px; color: black;"></i></a>
+                </div>
+                <div class="square">
+                  <a href="https://www.facebook.com/p/boutiquemagnet-100071933108573/"><i class="fa fa-facebook" style="font-size: 60px; color: black;"></i></a>
+                </div>
+                <div class="square">
+                  <a href="#"><i class="fa fa-whatsapp" style="font-size: 60px; color: black;"></i></a>
+                </div>
+            </div>
+    </center>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+        <center><img src="https://images.pexels.com/photos/248159/pexels-photo-248159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="100%" style="max-width: 700px;"></center>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">About Us</h1>
+        <p class="lead">Meet the person who created this page, who created this page from font-end and back-end, who built it with the help of HTML, CSS, Javacript & Django who displayed it and presented it to you. My name is "ABCD"</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <!--<button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>-->
+        </div>
+      </div>
+  <div style="background-color: rgb(161, 161, 161);">
+  <span class="mb-3 mb-md-0 text-body-secondary" style="font-size: 20px;">&copy; 2024 newton010010@gmail.com</span>
+  </div>
+</body>
+</html>
+{% endblock %}

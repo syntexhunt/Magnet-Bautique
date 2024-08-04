@@ -1,0 +1,18 @@
+<!-- templates/front.html -->
+<h1>BAck Page</h1>
+<h2>Categories</h2>
+<ul>
+    {% for category in categories %}
+         {% if category.page == 'back' %}
+            <li>{{ category.name }}</li>
+         {% endif %}
+    {% endfor %}
+</ul>
+<h2>Posts</h2>
+<ul>
+    {% for post in posts %}
+        {% if category.page == 'back' %}
+            <li>{{ post.title }}</li>
+        {% endif %}    
+    {% endfor %}
+</ul>

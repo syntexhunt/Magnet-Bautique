@@ -1,0 +1,53 @@
+
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+   
+    <title>Post Detail</title>
+
+
+<link rel="stylesheet" href="/media/css/nouislider.css">
+    <!-- Google fonts - Playfair Display-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
+    <!-- Google fonts - Poppins-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
+    <!-- swiper-->
+    <link rel="stylesheet" href="/media/css/swiper.min.css">
+    <!-- Magnigic Popup-->
+    <link rel="stylesheet" href="/media/css/magnific-popup.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/media/css/default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/media/css/custom.css">
+    <script src="/media/js/main.js"> </script>
+<style>
+    .we h1{
+    font-family: "Playwrite GB S", cursive;
+    font-size: 20px;
+  }
+</style>
+
+<section>
+    <div class="container">
+       
+        <div class="row text-center">
+            <div class="col-xl-10 mx-auto">
+                <div class="we"><h1>{{ post.title }}</h1></div>
+                <br>
+                <img class="img-fluid mb-5"
+                    src="/media/{{post.image}}"
+                    alt="{{ post.title }}"></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-10 mx-auto">
+                <div class="text-content">
+                    {{post.content|safe}}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+

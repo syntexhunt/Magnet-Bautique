@@ -1,0 +1,87 @@
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts By Category</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+  }
+  
+  .product {
+      margin: 20px;
+      text-align: center;
+  }
+  .product h3, p {
+    font-family: "Square Peg", cursive;
+    color: black;
+  }
+  .product a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .product img {
+      max-width: 100%;
+      height: auto;
+  }
+  .we h1{
+    font-family: "Playwrite GB S", cursive;
+    font-size: 20px;
+  }
+  </style>
+
+
+
+    
+
+<center><div class="we"><h1>{{ category.name }}</h1></div></center>
+
+
+
+    <section class="products">
+        {% for post in posts %}
+        
+        <div class="product">
+            <a href="{% url 'post_detail' post.slug %}">
+                <img src="{{ post.get_image }}" alt="Product 1" style="max-width: 300px;" width="100%">
+            </a>
+            <a href="{% url 'post_detail' post.slug %}">
+                <img src="{{ post.image_url }}" alt="Product 1" style="max-width: 300px;" width="100%">
+            </a>
+
+            <p>{{ post.category.name }}</p>
+
+            <h3>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a>
+            </h3>
+            <h3>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.price }}
+                </a>
+            </h3>
+            
+            
+            <p>
+                <i class="far fa-clock mr-2"></i> {{ post.created_at|date:"Y-m-d H:i" }}
+            </p>
+        </div>
+        {% endfor %}
+    </section>
+
+
+

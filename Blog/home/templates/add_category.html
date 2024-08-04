@@ -1,0 +1,318 @@
+
+
+
+
+
+
+    {% extends 'base.html' %}
+
+
+
+
+
+    {% block content %}
+    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+       
+        <title>Add Category</title>
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
+    
+        
+    
+      
+        <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+        <style>
+             body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+        
+        /* Animation Example */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .form-group {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+          .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+          }
+    
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+    
+          .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+          }
+    
+          .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+          }
+    
+          .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+          }
+    
+          .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+          }
+    
+          .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+          }
+    
+          .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+          }
+    
+          .bd-mode-toggle {
+            z-index: 1500;
+          }
+    
+          .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+          }
+    
+          nav {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+      
+      .logo {
+        font-size: 1.5rem;
+      }
+      
+      ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      ul li {
+        margin-right: 20px;
+      }
+      
+      ul li a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      
+      ul li a:hover {
+        color: rgb(56, 61, 56);
+      }
+    
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+    
+    .product {
+        margin: 20px;
+        text-align: center;
+    }
+    
+    .product img {
+        max-width: 100%;
+        height: auto;
+    }
+        </style>
+    
+        <nav>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+                <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
+                  
+                  </div>
+                  <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+                    <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+                          <a href="{% url 'dashboard' %}"><i class="bi bi-speedometer" ></i>
+                            <a href="{% url 'dashboard' %}">Dashboard</a>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2" href="#">
+                          <a href="{% url 'add_post' %}"><i class="bi bi-cart-fill"></i></a>
+                          <a href="{% url 'add_post' %}">Add Post</a>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link d-flex align-items-center gap-2" href="#">
+                              <a href="{% url 'post_list' %}"><i class="bi bi-cart2"></i></a>
+                              <a href="{% url 'post_list' %}">Post List</a>
+                          </a>
+                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-2" href="#">
+                          <a href="{% url 'add_category' %}"><i class="bi bi-calendar2-plus-fill"></i></a>
+                          <a href="{% url 'add_category' %}">Add Category</a>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link d-flex align-items-center gap-2" href="#">
+                              <a href="{% url 'category_list' %}"><i class="bi bi-calendar2-plus"></i></a>
+                              <a href="{% url 'category_list' %}">Category List</a>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link d-flex align-items-center gap-2" href="#">
+                              <a href="{% url 'index' %}"><i class="bi bi-house"></i></a>
+                              <a href="{% url 'index' %}">Home</a>
+                          </a>
+                        </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          
+              <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                  
+                </div>
+                
+                <h1 style="font-size: 50px;">Add Category</h1>
+      <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          
+          <button type="submit">Add Category</button>
+      </form>
+                
+          
+          
+          
+                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+          
+              </main>
+            </div>
+          </div>
+        </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     
+    
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="dashboard.js"></script></body>
+    
+        {% endblock %}
+    
+    
+    
+    
+    
+    
+    
+        
+
+
+
+
+
+
+
+

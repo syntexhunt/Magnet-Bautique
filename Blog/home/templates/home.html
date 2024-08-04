@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0;
+                    document.getElementById("passwordForm").style.display = "block";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let countdownTime = 10 * 60, // 10 minutes countdown
+                display = document.querySelector('#time');
+            startTimer(countdownTime, display);
+        };
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Home Page</h1>
+        <p>Time remaining: <span id="time">10:00</span></p>
+    </div>
+    <div id="passwordForm" style="display:none;">
+        <form method="post" action="">
+            {% csrf_token %}
+            <label for="password">Enter Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
